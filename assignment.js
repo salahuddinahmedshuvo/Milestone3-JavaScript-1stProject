@@ -20,22 +20,36 @@ function feetToMile(feet) {
 
 
 
-
-
-
-
-
 // woodCalculator
-function woodCalculator (chair, table, couch) {
-    var chairWood = chair * 1; 
-    var tableWood = table * 2;
-    var couchWood = couch * 3;
-    var totalWood = chairWood + tableWood + couchWood;
-    return totalWood;
+function woodCalculator(chair,table,bed){
+    if (chair<0){
+        if (table<0){
+            if (bed<0){
+                return "All Value is negative.Please check again.";
+            }
+            else{
+                var woodForBed = bed*5;
+                return "Please Put possitive number:"+woodForBed;
+            }
+        }
+        else{
+            var woodForBed = bed*5;
+            var woodForTable = table*3;
+            var woodForTableAndBed = woodForBed+woodForTable;
+            return "Please Put possitive number:"+woodForTableAndBed;
+        }
+    }
+    else{
+        var woodForBed = bed*5;
+        var woodForTable = table*3;
+        var woodForChair = chair*1;
+        var totalWood = woodForChair+woodForTable+woodForBed;
+        return totalWood;
+    }
 }
 
-// var totalWood = woodCalculator (3, 5, 8);
-// console.log (totalWood);
+// var result =  woodCalculator (3, 10, 5);
+// console.log(result);
 
 
 
